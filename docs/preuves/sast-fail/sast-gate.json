@@ -1,0 +1,11 @@
+{
+  "runId": "ce8ce918-de71-4364-948f-af592d1c9800",
+  "sourceHash": "78ad20fe875e348424e81f5207303b7329795bd4c0c54ab7c51c1ad6fb7212ce",
+  "stage": "sast",
+  "status": "FAIL",
+  "reason": "Appel eval() interdit dans src/.",
+  "blockingFindings": 1,
+  "scannerExitCode": 1,
+  "at": "2026-10-21T19:46:13.445Z",
+  "reportSha256": "4108bddac04f089e0ee677e2add47f5a2cc74801ede7616cbd16daaf7cf6732e"
+}

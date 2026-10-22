@@ -1,0 +1,11 @@
+{
+  "runId": "c7b4c8b1-8920-486a-85eb-bc7317253050",
+  "sourceHash": "d3b60e5f99c1fdbdea9d90825f811708656ae10a7ee2e4a7687beb824a89b68c",
+  "stage": "sca",
+  "status": "PASS",
+  "reason": "Rapport valide, aucun résultat au seuil bloquant.",
+  "blockingFindings": 0,
+  "scannerExitCode": 0,
+  "at": "2026-10-21T19:46:54.019Z",
+  "reportSha256": "846fc260eb0bf70e6b21419d4cab9fcc61c224c7362324d4cbc8aebf8355f9bd"
+}

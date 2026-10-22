@@ -1,0 +1,6 @@
+rules:
+  - id: formation.javascript.eval-interdit
+    languages: [javascript]
+    severity: ERROR
+    message: "SAST : eval() exécute du code. Utiliser une conversion numérique validée."
+    pattern: eval(...)

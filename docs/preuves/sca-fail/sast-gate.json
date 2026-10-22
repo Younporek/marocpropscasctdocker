@@ -1,0 +1,11 @@
+{
+  "runId": "16fa29cb-1694-4d09-aff4-40ec6051281d",
+  "sourceHash": "33e20f04781e23cb8d21ceb3932980a505331b61784c9a9bb0bd990b1baf4d0c",
+  "stage": "sast",
+  "status": "PASS",
+  "reason": "Rapport valide, aucun résultat au seuil bloquant.",
+  "blockingFindings": 0,
+  "scannerExitCode": 0,
+  "at": "2026-10-21T19:46:26.118Z",
+  "reportSha256": "751cb110a47e8ed5f30927a9d66e55c59c7a10d144d22c4c8e254f7b5225ea1c"
+}

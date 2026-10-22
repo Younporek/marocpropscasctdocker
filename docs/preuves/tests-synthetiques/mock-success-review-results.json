@@ -1,0 +1,30 @@
+{
+  "executedAt": "2026-10-21T19:50:09.342570+00:00",
+  "kind": "MOCKED success control flow only; NO Docker daemon, actual scanner, container, network service or VM deployment",
+  "steps": [
+    {
+      "script": "ci/04-build-image.sh",
+      "exitCode": 0,
+      "stdout": ""
+    },
+    {
+      "script": "ci/05-image-scan.sh",
+      "exitCode": 0,
+      "stdout": "IMAGE : PASS \u2014 Rapport valide, aucun r\u00e9sultat au seuil bloquant.\n"
+    },
+    {
+      "script": "ci/06-package-deploy.sh",
+      "exitCode": 0,
+      "stdout": "D\u00e9ploy\u00e9 sur http://127.0.0.1:18080/health (sur la VM Agent)\nNettoyage manuel apr\u00e8s observation : docker stop marocpromo-lab-9c94e1ec-1dee-42eb-a6db-6b8354626e9b && docker rm marocpromo-lab-9c94e1ec-1dee-42eb-a6db-6b8354626e9b\n"
+    }
+  ],
+  "releaseChecksums": "marocpromo-source.tar.gz: OK\nimage.json: OK\nimage-gate.json: OK\nsmoke.json: OK\n",
+  "consistentMockImageId": true,
+  "releaseFiles": [
+    "SHA256SUMS",
+    "image-gate.json",
+    "image.json",
+    "marocpromo-source.tar.gz",
+    "smoke.json"
+  ]
+}

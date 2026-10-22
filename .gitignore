@@ -1,0 +1,8 @@
+node_modules/
+reports/
+release/
+.ci/
+.env
+*.log
+.venv/
+__pycache__/

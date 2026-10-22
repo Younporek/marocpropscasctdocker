@@ -1,0 +1,14 @@
+✔ HTTP : santé, devis, saisie invalide et route inconnue (47.836622ms)
+✔ 200 MAD moins 15 % = 170 MAD (2.260435ms)
+✔ sans remise, le prix ne change pas (0.305876ms)
+✔ remise de 100 % = gratuit (0.156541ms)
+✔ arrondi à deux décimales (1.313233ms)
+✔ rejeter prix négatif et remise supérieure à 100 (0.659706ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 202.968071

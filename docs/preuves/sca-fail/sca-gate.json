@@ -1,0 +1,11 @@
+{
+  "runId": "16fa29cb-1694-4d09-aff4-40ec6051281d",
+  "sourceHash": "33e20f04781e23cb8d21ceb3932980a505331b61784c9a9bb0bd990b1baf4d0c",
+  "stage": "sca",
+  "status": "FAIL",
+  "reason": "Dépendance HIGH ou CRITICAL.",
+  "blockingFindings": 1,
+  "scannerExitCode": 1,
+  "at": "2026-10-21T19:46:31.081Z",
+  "reportSha256": "481ae88619ebbe40b5c4a4a0255f2db6553040e107b0be6ff8f45493ada7028e"
+}

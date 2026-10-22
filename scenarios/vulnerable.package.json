@@ -1,0 +1,19 @@
+{
+  "name": "marocpromo-lab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TP CI/CD DevSecOps TeamCity, laboratoire local uniquement",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test tests/promo.test.js tests/http.test.js",
+    "test:gates": "node --test tests/gates.test.js",
+    "scenario": "node scripts/set-scenario.mjs"
+  },
+  "dependencies": {
+    "lodash": "4.17.15"
+  }
+}

@@ -1,0 +1,72 @@
+TEAMCITY : UNE CONFIGURATION, SIX STEPS COMMAND LINE
+Working directory vide = racine du checkout. Chaque commande ci-dessous est un
+Custom script. Les fichiers restent en LF. Ne pas lancer npm install dans CI.
+
+PARAMÈTRE ENVIRONNEMENT OBLIGATOIRE
+Nom : env.BASE_IMAGE
+Valeur : référence node:24-bookworm-slim@sha256:... réellement résolue et validée
+Voir docs/PREREQUIS.md. Aucun faux digest n'est fourni.
+
+01 — Préparer + tester
+  bash ci/01-prepare-test.sh
+  Execution policy : Only if all previous steps were successful.
+
+02 — SAST Semgrep
+  bash ci/02-sast.sh
+  Execution policy : Only if all previous steps were successful.
+
+03 — SCA npm audit
+  bash ci/03-sca.sh
+  Execution policy : Even if some of the previous steps failed.
+  Le script vérifie quand même le gate des tests. Ainsi une alerte SAST ne masque
+  pas le rapport SCA, mais des tests en échec empêchent la suite.
+
+04 — Construire l'image
+  bash ci/04-build-image.sh
+  Execution policy : Only if build status is successful.
+
+05 — Scanner l'image Trivy
+  bash ci/05-image-scan.sh
+  Execution policy : Only if build status is successful.
+
+06 — Déployer localement + smoke + paquet
+  bash ci/06-package-deploy.sh
+  Execution policy : Only if build status is successful.
+
+FAILURE CONDITIONS
+Activer « Fail build if build process exit code is not zero ».
+Ne jamais ajouter « || true » ni désactiver le code de sortie non nul.
+
+GENERAL SETTINGS > ARTIFACT PATHS
+  reports/** => rapports
+  release/** => release
+Publish artifacts : Always, even if build stop command was issued.
+Le dossier release est nettoyé au début du build et rempli seulement après PASS.
+Ne pas utiliser de règle globale qui publie node_modules, .ci, .git ou des secrets.
+
+BUILD FEATURES
+Optionnel : XML report processing > Ant JUnit > reports/tests-junit.xml
+Ce rapport contient 5 tests métier et 1 test HTTP.
+
+SÉCURITÉ ET CONCURRENCE
+Build simultané maximal = 1 dans cette configuration, avec un agent Ubuntu dédié.
+Une autre configuration ne doit pas utiliser le port 18080 de cet agent.
+Checkout propre recommandé. Ne jamais éditer le checkout pendant un build.
+Utiliser un dépôt pédagogique privé/isolé. Aucun secret de production.
+L'accès Docker n'est requis que sur l'agent, pas sur TeamCity Server.
+
+DÉMONSTRATION
+Depuis une COPIE DE TRAVAIL (pas le checkout TeamCity) :
+  node scripts/set-scenario.mjs unit-fail
+  git add src/promo.js package.json package-lock.json
+  git commit -m "TP : défaut de calcul volontaire"
+  git push
+Puis lancer TeamCity. Répéter avec sast-fail, sca-fail et fixed.
+Le scénario both-security-fail permet d'observer simultanément SAST et SCA.
+
+SUCCÈS FINAL
+Tous les gates PASS, même image ID dans reports/image.json,
+reports/image-gate.json et docker inspect du conteneur, /health et /quote testés,
+archive et SHA256SUMS présents dans les Artifacts.
+Les CVE d'une image évoluent : le scénario fixed ne promet pas un scan Trivy PASS.
+Si Trivy bloque, le rapport est publié, aucune release n'est créée.

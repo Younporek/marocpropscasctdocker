@@ -1,0 +1,8 @@
+{
+  "runId": "5da084f7-e821-4beb-b0d5-0f1ccc2b4c80",
+  "sourceHash": "41024de7c805b75bc38511772945949afc239631f05341eaa04d7d57fc92d2c3",
+  "stage": "tests",
+  "status": "FAIL",
+  "at": "2026-10-21T19:45:55.073Z",
+  "reason": "Tests fonctionnels en échec"
+}

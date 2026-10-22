@@ -1,0 +1,162 @@
+{
+  "executedAt": "2026-10-21T19:43:59.386Z",
+  "kind": "pure-parser-regression-not-live-scanner",
+  "tests": [
+    {
+      "name": "SAST clean valid",
+      "expected": "PASS",
+      "actual": "PASS",
+      "ok": true
+    },
+    {
+      "name": "SAST missing scan coverage",
+      "expected": "ERROR",
+      "actual": "ERROR",
+      "ok": true
+    },
+    {
+      "name": "SAST missing expected file",
+      "expected": "ERROR",
+      "actual": "ERROR",
+      "ok": true
+    },
+    {
+      "name": "SAST parse error",
+      "expected": "ERROR",
+      "actual": "ERROR",
+      "ok": true
+    },
+    {
+      "name": "SAST error return",
+      "expected": "ERROR",
+      "actual": "ERROR",
+      "ok": true
+    },
+    {
+      "name": "SAST inconsistent return",
+      "expected": "ERROR",
+      "actual": "ERROR",
+      "ok": true
+    },
+    {
+      "name": "SAST reported finding",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "ok": true
+    },
+    {
+      "name": "SCA clean valid",
+      "expected": "PASS",
+      "actual": "PASS",
+      "ok": true
+    },
+    {
+      "name": "SCA empty JSON",
+      "expected": "ERROR",
+      "actual": "ERROR",
+      "ok": true
+    },
+    {
+      "name": "SCA endpoint error",
+      "expected": "ERROR",
+      "actual": "ERROR",
+      "ok": true
+    },
+    {
+      "name": "SCA error alongside counts",
+      "expected": "ERROR",
+      "actual": "ERROR",
+      "ok": true
+    },
+    {
+      "name": "SCA no counts",
+      "expected": "ERROR",
+      "actual": "ERROR",
+      "ok": true
+    },
+    {
+      "name": "SCA negative count",
+      "expected": "ERROR",
+      "actual": "ERROR",
+      "ok": true
+    },
+    {
+      "name": "SCA inconsistent result",
+      "expected": "ERROR",
+      "actual": "ERROR",
+      "ok": true
+    },
+    {
+      "name": "SCA high finding",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "ok": true
+    },
+    {
+      "name": "Trivy real node-pkg clean",
+      "expected": "PASS",
+      "actual": "PASS",
+      "ok": true
+    },
+    {
+      "name": "Trivy empty JSON",
+      "expected": "ERROR",
+      "actual": "ERROR",
+      "ok": true
+    },
+    {
+      "name": "Trivy no results",
+      "expected": "ERROR",
+      "actual": "ERROR",
+      "ok": true
+    },
+    {
+      "name": "Trivy missing DB",
+      "expected": "ERROR",
+      "actual": "ERROR",
+      "ok": true
+    },
+    {
+      "name": "Trivy expired DB",
+      "expected": "ERROR",
+      "actual": "ERROR",
+      "ok": true
+    },
+    {
+      "name": "Trivy wrong image",
+      "expected": "ERROR",
+      "actual": "ERROR",
+      "ok": true
+    },
+    {
+      "name": "Trivy scanner fatal",
+      "expected": "ERROR",
+      "actual": "ERROR",
+      "ok": true
+    },
+    {
+      "name": "Trivy docker launch failure",
+      "expected": "ERROR",
+      "actual": "ERROR",
+      "ok": true
+    },
+    {
+      "name": "Trivy count/exit mismatch",
+      "expected": "ERROR",
+      "actual": "ERROR",
+      "ok": true
+    },
+    {
+      "name": "Trivy HIGH finding",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "ok": true
+    },
+    {
+      "name": "Trivy EOL blocks",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "ok": true
+    }
+  ]
+}

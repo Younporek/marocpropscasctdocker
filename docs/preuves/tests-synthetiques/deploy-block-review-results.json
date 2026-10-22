@@ -1,0 +1,66 @@
+{
+  "executedAt": "2026-10-21T19:45:44.799Z",
+  "kind": "shell-control-regression-with-mock-docker-that-must-never-run",
+  "checks": [
+    {
+      "name": "tests FAIL blocks deploy before Docker",
+      "exitCode": 2,
+      "dockerInvoked": false,
+      "ok": true
+    },
+    {
+      "name": "sast FAIL blocks deploy before Docker",
+      "exitCode": 2,
+      "dockerInvoked": false,
+      "ok": true
+    },
+    {
+      "name": "sca FAIL blocks deploy before Docker",
+      "exitCode": 2,
+      "dockerInvoked": false,
+      "ok": true
+    },
+    {
+      "name": "build FAIL blocks deploy before Docker",
+      "exitCode": 2,
+      "dockerInvoked": false,
+      "ok": true
+    },
+    {
+      "name": "image FAIL blocks deploy before Docker",
+      "exitCode": 2,
+      "dockerInvoked": false,
+      "ok": true
+    },
+    {
+      "name": "tests MISSING blocks deploy before Docker",
+      "exitCode": 2,
+      "dockerInvoked": false,
+      "ok": true
+    },
+    {
+      "name": "sast MISSING blocks deploy before Docker",
+      "exitCode": 2,
+      "dockerInvoked": false,
+      "ok": true
+    },
+    {
+      "name": "sca MISSING blocks deploy before Docker",
+      "exitCode": 2,
+      "dockerInvoked": false,
+      "ok": true
+    },
+    {
+      "name": "build MISSING blocks deploy before Docker",
+      "exitCode": 2,
+      "dockerInvoked": false,
+      "ok": true
+    },
+    {
+      "name": "image MISSING blocks deploy before Docker",
+      "exitCode": 2,
+      "dockerInvoked": false,
+      "ok": true
+    }
+  ]
+}

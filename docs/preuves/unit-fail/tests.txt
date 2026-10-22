@@ -1,0 +1,100 @@
+✖ HTTP : santé, devis, saisie invalide et route inconnue (33.915553ms)
+✖ 200 MAD moins 15 % = 170 MAD (3.938266ms)
+✔ sans remise, le prix ne change pas (0.276319ms)
+✖ remise de 100 % = gratuit (0.277551ms)
+✖ arrondi à deux décimales (1.31432ms)
+✔ rejeter prix négatif et remise supérieure à 100 (0.698089ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 2
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 161.810162
+
+✖ failing tests:
+
+test at tests/http.test.js:5:1
+✖ HTTP : santé, devis, saisie invalide et route inconnue (33.915553ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+      currency: 'MAD',
+  +   total: 230
+  -   total: 170
+    }
+  
+      at TestContext.<anonymous> (/workspace/shared/teamcity_full_devsecops_lab/repo/tests/http.test.js:11:10)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { total: 230, currency: 'MAD' },
+    expected: { total: 170, currency: 'MAD' },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/promo.test.js:6:1
+✖ 200 MAD moins 15 % = 170 MAD (3.938266ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  230 !== 170
+  
+      at TestContext.<anonymous> (/workspace/shared/teamcity_full_devsecops_lab/repo/tests/promo.test.js:6:51)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 230,
+    expected: 170,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/promo.test.js:8:1
+✖ remise de 100 % = gratuit (0.277551ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  400 !== 0
+  
+      at TestContext.<anonymous> (/workspace/shared/teamcity_full_devsecops_lab/repo/tests/promo.test.js:8:48)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 400,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/promo.test.js:9:1
+✖ arrondi à deux décimales (1.31432ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  22.99 !== 16.99
+  
+      at TestContext.<anonymous> (/workspace/shared/teamcity_full_devsecops_lab/repo/tests/promo.test.js:9:47)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 22.99,
+    expected: 16.99,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

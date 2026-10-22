@@ -1,0 +1,58 @@
+{
+  "executedAt": "2026-10-21T19:45:10.764Z",
+  "kind": "state-machine-regression-with-synthetic-files",
+  "checks": [
+    {
+      "name": "Initialize run",
+      "ok": true
+    },
+    {
+      "name": "Missing tests gate blocks",
+      "ok": true
+    },
+    {
+      "name": "Mark tests and require matching report",
+      "ok": true
+    },
+    {
+      "name": "Modified report blocks",
+      "ok": true
+    },
+    {
+      "name": "Different TeamCity build number blocks",
+      "ok": true
+    },
+    {
+      "name": "Modified source blocks",
+      "ok": true
+    },
+    {
+      "name": "Restored exact source matches fingerprint",
+      "ok": true
+    },
+    {
+      "name": "SCA begin invalidates itself and downstream; keeps earlier stages",
+      "ok": true
+    },
+    {
+      "name": "Rerun clears release and obsolete image identity",
+      "ok": true
+    },
+    {
+      "name": "Failure removes release",
+      "ok": true
+    },
+    {
+      "name": "Failure recorded as ERROR",
+      "ok": true
+    },
+    {
+      "name": "New init generates new run ID",
+      "ok": true
+    },
+    {
+      "name": "Prior-run PASS cannot be reused",
+      "ok": true
+    }
+  ]
+}
